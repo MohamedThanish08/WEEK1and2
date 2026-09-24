@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class RockPaperScissors {
 
-    // Method to determine the winner
+    
     static String playRound(String playerMove, String computerMove) {
 
         if (playerMove.equals(computerMove)) {
@@ -39,7 +39,7 @@ public class RockPaperScissors {
         int losses = 0;
         int draws = 0;
 
-        // Play 5 rounds
+        
         for (int i = 0; i < N; i++) {
 
             System.out.print("Round " + (i + 1)
@@ -47,11 +47,11 @@ public class RockPaperScissors {
 
             String playerMove = sc.nextLine();
 
-            // Convert first letter to uppercase
+           
             playerMove = playerMove.substring(0, 1).toUpperCase()
                     + playerMove.substring(1).toLowerCase();
 
-            // Check for invalid input
+           
             if (!playerMove.equals("Rock")
                     && !playerMove.equals("Paper")
                     && !playerMove.equals("Scissors")) {
@@ -61,18 +61,18 @@ public class RockPaperScissors {
                 continue;
             }
 
-            // Generate computer move
+           
             String computerMove = moves[random.nextInt(3)];
 
-            // Find result
+            
             String result = playRound(playerMove, computerMove);
 
-            // Store data
+            
             playerMoves[i] = playerMove;
             computerMoves[i] = computerMove;
             results[i] = result;
 
-            // Update scores
+            
             if (result.equals("Player Wins")) {
                 wins++;
             } else if (result.equals("Computer Wins")) {
@@ -86,10 +86,10 @@ public class RockPaperScissors {
             System.out.println();
         }
 
-        // Calculate win percentage
+       
         double winPercentage = (wins * 100.0) / N;
 
-        // Display summary
+        
         System.out.println("\n========== FINAL SUMMARY ==========");
 
         System.out.printf("%-8s %-15s %-17s %-15s%n",
